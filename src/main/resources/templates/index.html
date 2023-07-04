@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>validate password</title>
+    <script type="text/javascript">
+		function password_validation()
+        {
+			var password = document.getElementById("t1").value;
+            const Http = new XMLHttpRequest();
+            const url='/validator?password='+password;
+            Http.open("GET", url);
+            Http.send();
+
+            Http.onreadystatechange = (e) => {
+              document.getElementById("t3").value = Http.responseText;
+              JSON.parse(Http.responseText, function (k, v) {
+                  if('Valid' == k){
+                      if('true' == v){
+                        document.getElementById("t2").value = 'PASS';
+                      }else{
+                        document.getElementById("t2").value = 'FAIL';
+                      }
+                  }
+              });
+            }
+		}
+	</script>
+</head>
+
+<body>
+<h3 style="color: blueviolet;">Java Password Validation</h3>
+<p>
+    Enter Password:
+    <label for="t1"></label><input type="password" id="t1" />
+    <br/>
+    <br/>
+    <input type="button" value="Submit"	onclick="password_validation()" />
+    <br/>
+    <br/>
+    Valid:
+    <label for="t2"></label><input type="text" id="t2" readonly>
+    <br/>
+    <br/>
+    Output:
+    <br/>
+    <label for="t3"></label><textarea id="t3" readonly></textarea>
+    <br><br>
+</p>
+<p> <b><u style="color: red;">Note:</u></b></p>
+<ol>
+    <li>Must not contain any sequence of characters immediately followed by the same sequence.</li>
+    <li>Must consist of a mixture of lowercase letters and numerical digits only, with at least one of each.</li>
+    <li>Must be between 5 and 12 characters in length.</li>
+</ol>
+</body>
+</html>

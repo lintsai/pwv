@@ -37,5 +37,7 @@ fulfillment of the service. Also, show how to access and use the service at runt
 * Apply the same design principles to the test code that you apply to the actual code
 * Ask questions, confirm your understanding
 
-## Ask
-1. 
+## API Spec
+- requests to the /validator to check the password
+/validator?password={input.value}
+
