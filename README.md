@@ -39,5 +39,15 @@ fulfillment of the service. Also, show how to access and use the service at runt
 
 ## API Spec
 - requests to the /validator to check the password
-/validator?password={input.value}
+   1. /validator?password={input.value}
+- response a json value
+   1. key=validation rules
+   2. value=true/false
 
+## Test Page
+http://localhost:8080/
+
+1. input "Enter Password"
+2. check "Submit" button
+3. "Valid" response PASS/FAIL
+4. "Output" show full response
