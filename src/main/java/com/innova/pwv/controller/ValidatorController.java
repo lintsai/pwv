@@ -1,7 +1,7 @@
 package com.innova.pwv.controller;
 
 import com.innova.pwv.service.ValidatorService;
-import com.innova.pwv.util.Valid;
+import com.innova.pwv.util.ValidPair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,7 +27,7 @@ public class ValidatorController {
      */
     @RequestMapping("/validator")
     public String validator(@RequestParam(value="password") String password) {
-        Valid<Boolean, List<Valid<String, Boolean>>> results =
+        ValidPair<Boolean, List<ValidPair<String, Boolean>>> results =
                 validatorService.valid(password);
         return validatorService.resultsToJsonString(results);
     }

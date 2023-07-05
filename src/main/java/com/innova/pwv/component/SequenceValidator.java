@@ -1,6 +1,6 @@
 package com.innova.pwv.component;
 
-import com.innova.pwv.util.Valid;
+import com.innova.pwv.util.ValidPair;
 import com.innova.pwv.util.Validator;
 import org.springframework.stereotype.Component;
 
@@ -21,8 +21,8 @@ public class SequenceValidator implements Validator {
      * @param password validate password
      * @return boolean pass or fail
      */
-    public Valid<String, Boolean> isValid(String password) {
-        return new Valid<>(
+    public ValidPair<String, Boolean> isValid(String password) {
+        return new ValidPair<>(
                 VALIDATOR_WORD,
                 !Pattern.compile(REGEX)
                         .matcher(password)
