@@ -1,6 +1,5 @@
 package com.innova.pwv.controller;
 
-import com.innova.pwv.service.TransformService;
 import com.innova.pwv.service.ValidatorService;
 import com.innova.pwv.util.ValidPair;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +17,6 @@ import java.util.List;
 public class ValidatorController {
     @Autowired
     private ValidatorService validatorService;
-    @Autowired
-    private TransformService transformService;
     /**
      * requests to the /validator to check the password
      *
@@ -30,7 +27,7 @@ public class ValidatorController {
     public String validator(@RequestParam(value="password") String password) {
         ValidPair<Boolean, List<ValidPair<String, Boolean>>> results =
                 validatorService.valid(password);
-        return transformService.resultsToJsonString(results);
+        return validatorService.resultsToJsonString(results);
     }
 
 }

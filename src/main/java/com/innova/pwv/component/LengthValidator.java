@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 
 /**
- * PasswordValidator validator check password length
+ * PasswordValidator validator check password length is valid
  */
 @Component
 public class LengthValidator implements Validator {

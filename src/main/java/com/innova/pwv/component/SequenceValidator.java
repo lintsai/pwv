@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 
 /**
- * PasswordValidatorComponentDecorator validator check password length sequence is valid
+ * PasswordValidatorComponentDecorator validator check password sequence is valid
  */
 @Component
 public class SequenceValidator implements Validator {
