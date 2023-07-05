@@ -12,7 +12,7 @@
             Http.open("GET", url);
             Http.send();
 
-            Http.onreadystatechange = (e) => {
+            Http.onload = (e) => {
               document.getElementById("t3").value = Http.responseText;
               JSON.parse(Http.responseText, function (k, v) {
                   if('Valid' == k){
