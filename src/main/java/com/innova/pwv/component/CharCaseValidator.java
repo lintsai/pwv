@@ -18,7 +18,7 @@ public class CharCaseValidator implements Validator {
      * check password length chars type is valid
      *
      * @param password validate password
-     * @return boolean pass or fail
+     * @return ValidPair with boolean pass or fail
      */
     public ValidPair<String, Boolean> isValid(String password) {
         return new ValidPair<>(
