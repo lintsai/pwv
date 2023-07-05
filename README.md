@@ -1,5 +1,5 @@
-# pwv
-Password Validation Service
+# Password Validation Service
+`pwv=Password Validation Service`
 
 ## Instructions
 
@@ -37,12 +37,27 @@ fulfillment of the service. Also, show how to access and use the service at runt
 * Apply the same design principles to the test code that you apply to the actual code
 * Ask questions, confirm your understanding
 
+## Framework
+* Java 17
+* Spring Boot 3.1.1
+* Spring Boot Thymeleaf
+* JavaScript
+* Html
+
 ## API Spec
 - requests to the /validator to check the password
-   1. /validator?password={input.value}
+```
+/validator?password={input.value}
+```
 - response a json value
-   1. key=validation rules
-   2. value=true/false
+```
+key=validation rules
+value=true/false
+```
+- Example
+```
+http://localhost:8080/validator?password={input.value}
+```
 
 ## Test Page
 http://localhost:8080/
